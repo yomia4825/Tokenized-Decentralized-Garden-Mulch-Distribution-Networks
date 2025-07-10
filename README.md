@@ -1,211 +1,98 @@
-# Pull Request: Tokenized Decentralized Garden Mulch Distribution Networks
+# Tokenized Decentralized Garden Mulch Distribution Networks
+
+A blockchain-based ecosystem for managing organic mulch distribution, quality verification, and garden maintenance services using Clarity smart contracts on the Stacks blockchain.
 
 ## Overview
-This PR introduces a comprehensive blockchain-based ecosystem for managing organic mulch distribution using Clarity smart contracts on the Stacks blockchain.
 
-## Changes Made
+This project implements a decentralized network for garden mulch distribution that tokenizes various aspects of the mulch lifecycle, from sourcing to decomposition monitoring. The system ensures quality, optimizes timing, and provides transparent tracking of mulch services.
 
-### Smart Contracts Added
-1. **Material Sourcing Contract** (`material-sourcing.clar`)
-    - Supplier registration with stake requirements
-    - Material listing with quality verification
-    - Purchase functionality with quantity tracking
-    - Supplier rating system
+## Smart Contracts
 
-2. **Application Service Contract** (`application-service.clar`)
-    - Service provider registration
-    - Booking system for mulch application services
-    - Garden preparation requirement management
-    - Service completion tracking and rating
+### 1. Material Sourcing Contract (`material-sourcing.clar`)
+- Manages organic mulch procurement from verified suppliers
+- Implements quality verification standards
+- Tracks supplier reputation and certification
+- Handles payment distribution to suppliers
 
-3. **Seasonal Timing Contract** (`seasonal-timing.clar`)
-    - Regional climate data management
-    - Seasonal scheduling optimization
-    - Weather data integration
-    - Optimal timing calculations
+### 2. Application Service Contract (`application-service.clar`)
+- Coordinates mulch spreading services
+- Manages garden bed preparation requirements
+- Tracks service provider performance
+- Handles service booking and payment
 
-4. **Quantity Calculation Contract** (`quantity-calculation.clar`)
-    - Mulch requirement calculations based on garden dimensions
-    - Bulk discount system
-    - Delivery cost calculations
-    - Area-specific multipliers
+### 3. Seasonal Timing Contract (`seasonal-timing.clar`)
+- Determines optimal mulch application schedules
+- Considers climate data and seasonal patterns
+- Provides timing recommendations for different regions
+- Manages seasonal pricing adjustments
 
-5. **Decomposition Monitoring Contract** (`decomposition-monitoring.clar`)
-    - Garden registration for monitoring
-    - Decomposition measurement tracking
-    - Replacement notification system
-    - Lifespan calculations
+### 4. Quantity Calculation Contract (`quantity-calculation.clar`)
+- Estimates mulch requirements based on garden dimensions
+- Calculates costs for different mulch types
+- Provides bulk pricing discounts
+- Optimizes delivery logistics
 
-### Testing Suite
-- Comprehensive Vitest test coverage for all contracts
-- Unit tests for individual functions
-- Integration test scenarios
-- Edge case handling verification
+### 5. Decomposition Monitoring Contract (`decomposition-monitoring.clar`)
+- Tracks mulch breakdown rates over time
+- Monitors soil health improvements
+- Schedules replacement notifications
+- Maintains historical decomposition data
 
-### Documentation
-- Complete README with project overview
-- Installation and usage instructions
-- Token economics explanation
-- Contributing guidelines
+## Key Features
 
-## Key Features Implemented
+- **Tokenized Rewards**: Earn tokens for quality mulch supply and service provision
+- **Quality Assurance**: Blockchain-verified quality standards and supplier ratings
+- **Seasonal Optimization**: Smart timing recommendations based on regional data
+- **Cost Efficiency**: Automated quantity calculations and bulk pricing
+- **Sustainability Tracking**: Monitor environmental impact and soil health
 
-### Token Economics
-- MULCH token utility system
-- Quality staking mechanisms
-- Service reward distribution
-- Governance participation rights
+## Token Economics
 
-### Quality Assurance
-- Supplier verification and rating
-- Material quality grading (1-5 scale)
-- Organic certification tracking
-- Performance-based reputation system
+- **MULCH Tokens**: Primary utility token for network transactions
+- **Quality Staking**: Suppliers stake tokens to guarantee quality
+- **Service Rewards**: Service providers earn tokens for completed jobs
+- **Governance Rights**: Token holders participate in network decisions
 
-### Seasonal Optimization
-- Climate zone-specific recommendations
-- Weather-based timing adjustments
-- Regional pricing variations
-- Frost risk considerations
+## Getting Started
 
-### Cost Efficiency
-- Automated quantity calculations
-- Bulk discount thresholds
-- Delivery zone optimization
-- Area-specific pricing multipliers
+### Prerequisites
+- Stacks wallet for transaction signing
+- Basic understanding of Clarity smart contracts
+- Node.js for running tests
 
-### Sustainability Tracking
-- Decomposition rate monitoring
-- Soil health improvement metrics
-- Nutrient release pattern tracking
-- Environmental impact assessment
+### Installation
+1. Clone the repository
+2. Install dependencies: `npm install`
+3. Run tests: `npm test`
+4. Deploy contracts to Stacks testnet
 
-## Technical Implementation Details
+### Usage
+1. Register as a supplier or service provider
+2. Stake tokens for quality assurance
+3. List available mulch or services
+4. Accept bookings and complete services
+5. Earn rewards and build reputation
 
-### Error Handling
-- Comprehensive error codes for all failure scenarios
-- Input validation for all public functions
-- Authorization checks for sensitive operations
-- Data integrity verification
+## Testing
 
-### Data Storage
-- Efficient map structures for scalable data storage
-- Incremental ID systems for unique identification
-- Optional fields for flexible data modeling
-- Historical data preservation
+The project includes comprehensive Vitest test suites for all contracts:
+- Unit tests for individual contract functions
+- Integration tests for multi-contract workflows
+- Edge case testing for error conditions
 
-### Access Control
-- Contract owner privileges for system administration
-- User-specific data access restrictions
-- Service provider authorization checks
-- Customer booking verification
+Run tests with: `npm test`
 
-## Testing Coverage
+## Contributing
 
-### Material Sourcing Tests
-- Supplier registration validation
-- Material listing functionality
-- Purchase transaction handling
-- Rating system verification
+1. Fork the repository
+2. Create a feature branch
+3. Implement changes with tests
+4. Submit a pull request
 
-### Application Service Tests
-- Provider registration process
-- Service booking workflow
-- Preparation requirement management
-- Status update mechanisms
+## License
 
-### Seasonal Timing Tests
-- Region registration system
-- Schedule management functionality
-- Weather data integration
-- Optimal timing calculations
+MIT License - see LICENSE file for details
 
-### Quantity Calculation Tests
-- Specification management
-- Requirement calculations
-- Bulk discount applications
-- Delivery cost computations
+## Support
 
-### Decomposition Monitoring Tests
-- Garden registration process
-- Measurement recording system
-- Notification generation
-- Lifespan calculations
-
-## Security Considerations
-
-### Input Validation
-- All numeric inputs validated for reasonable ranges
-- String inputs limited to appropriate lengths
-- Boolean flags properly handled
-- List inputs constrained to maximum sizes
-
-### Authorization
-- Contract owner functions protected
-- User-specific data access controlled
-- Service provider permissions verified
-- Customer authorization checked
-
-### Data Integrity
-- Consistent state management across functions
-- Atomic operations for critical updates
-- Proper error handling for edge cases
-- Data validation before storage
-
-## Future Enhancements
-
-### Planned Features
-- Cross-contract integration for workflow automation
-- Advanced analytics and reporting
-- Mobile app integration
-- IoT sensor data integration
-
-### Scalability Improvements
-- Batch processing capabilities
-- Data archiving strategies
-- Performance optimization
-- Gas cost reduction
-
-## Breaking Changes
-None - This is the initial implementation.
-
-## Migration Guide
-Not applicable for initial release.
-
-## Deployment Instructions
-
-1. Deploy contracts to Stacks testnet in the following order:
-    - material-sourcing.clar
-    - application-service.clar
-    - seasonal-timing.clar
-    - quantity-calculation.clar
-    - decomposition-monitoring.clar
-
-2. Initialize contract data:
-    - Set initial mulch specifications
-    - Register initial regions
-    - Configure delivery zones
-    - Set decomposition rates
-
-3. Verify deployment:
-    - Run test suite against deployed contracts
-    - Verify read-only functions return expected data
-    - Test basic workflows end-to-end
-
-## Review Checklist
-
-- [ ] All contracts compile without errors
-- [ ] Test suite passes with 100% coverage
-- [ ] Documentation is complete and accurate
-- [ ] Error handling covers all edge cases
-- [ ] Security considerations addressed
-- [ ] Gas optimization implemented where possible
-- [ ] Code follows Clarity best practices
-- [ ] No cross-contract calls as requested
-- [ ] No HTML entities used in Clarity code
-- [ ] All functions properly documented
-
-## Related Issues
-- Initial implementation of tokenized mulch distribution network
-- Foundation for future ecosystem expansion
-- Baseline for community governance implementation
+For questions or support, please open an issue in the repository.
